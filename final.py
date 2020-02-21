@@ -13,11 +13,12 @@ pic_mask = np.zeros((rows, cols), np.uint8)
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("model/shape_predictor_68_face_landmarks.dat")
 
+#load images
 glass = cv2.imread("img/face2.png")
 face_effect = cv2.imread("img/face1.png")
 nose = cv2.imread("img/nose2.png")
 
-
+#initial face landmarks for funny gluss
 top = 21
 center = 27
 left = 36
@@ -26,7 +27,7 @@ height_ratio = 0.46
 scall = 1.7
 img = glass.copy()
 
-
+#Mainu function
 def menu():
     print("\n###########################\n\
      Demonstration loop \n \
@@ -37,6 +38,7 @@ def menu():
     \t n: Nose \n")
 
 menu()
+
 while True:
     _, frame = cap.read()
     pic_mask.fill(0)
